@@ -1,0 +1,84 @@
+/* Custom animation set for Herts Roofing */
+/* Uses WOW.js to trigger when scrolled into view. Apply classes: `wow animated-class` and optional data-wow-delay/data-wow-duration. */
+
+/* Keyframe definitions */
+@keyframes a-fade-up {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes a-fade-down {
+  from { opacity: 0; transform: translate3d(0, -20px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes a-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes a-zoom-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes a-slide-left {
+  from { opacity: 0; transform: translate3d(-30px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes a-slide-right {
+  from { opacity: 0; transform: translate3d(30px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* Animation utility classes (used with WOW.js) */
+.animated.a-fade-up { animation-name: a-fade-up; }
+.animated.a-fade-down { animation-name: a-fade-down; }
+.animated.a-fade-in { animation-name: a-fade-in; }
+.animated.a-zoom-in { animation-name: a-zoom-in; }
+.animated.a-slide-left { animation-name: a-slide-left; }
+.animated.a-slide-right { animation-name: a-slide-right; }
+
+/* Default durations if not provided via data-wow-duration */
+.animated.a-fade-up,
+.animated.a-fade-down,
+.animated.a-fade-in,
+.animated.a-zoom-in,
+.animated.a-slide-left,
+.animated.a-slide-right {
+  animation-duration: .9s;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+/* Stagger helper: add `stagger-children` to a row/parent to space out child animations */
+
+.stagger-children > *:nth-child(1).wow { animation-delay: .05s; }
+.stagger-children > *:nth-child(2).wow { animation-delay: .15s; }
+.stagger-children > *:nth-child(3).wow { animation-delay: .25s; }
+.stagger-children > *:nth-child(4).wow { animation-delay: .35s; }
+.stagger-children > *:nth-child(5).wow { animation-delay: .45s; }
+.stagger-children > *:nth-child(6).wow { animation-delay: .55s; }
+
+/* Minor polish for animated elements to reduce layout shift */
+.wow { visibility: hidden; }
+.wow.animated { visibility: visible; }
+
+/* FAQ styles aligned to site theme */
+.faq-area { background: rgb(246, 246, 246); }
+.faq-area .accordion { max-width: 100%; }
+.faq-area .accordion-item { border: 1px solid #e5e5e5; border-radius: 0; margin-bottom: 12px; overflow: hidden; background: #fff; }
+.faq-area .accordion-item:hover { box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+.faq-area .accordion-button { display: flex; align-items: center; width: 100%; padding: 16px 20px; background: #fff !important; border: 0; font-weight: 600; cursor: pointer; text-align: left; color: #444; }
+.faq-area .accordion-button:not(.collapsed) { color: #333; background: #fff !important; border-left: 3px solid #7e8b27; box-shadow: none; }
+.faq-area .accordion-button:hover { background: #fafafa; }
+.faq-area .accordion-button:focus { outline: none; box-shadow: 0 0 0 .2rem rgba(126,139,39,.2); border-color: rgba(126,139,39,.45); }
+.faq-area .accordion-button::after { content: "\f107"; font-family: FontAwesome; margin-left: auto; color: #7e8b27; transition: transform .2s ease; background-image: none !important; }
+.faq-area .accordion-button.collapsed::after { transform: rotate(0deg); }
+.faq-area .accordion-button:not(.collapsed)::after { transform: rotate(180deg); }
+.faq-area .accordion-body { padding: 16px 20px; background: #fff; border-top: 1px solid #eee; color: #666; line-height: 24px; }
+
+/* Smoothen Bootstrap collapse timing locally for FAQ */
+.faq-area .collapsing { transition: height .25s ease; }
+
+/* Trust strip centering */
+.trust-strip .row { min-height: 32px; display: -ms-flexbox; display: flex; -ms-align-items: center; align-items: center; }
+.trust-strip .row > [class*="col-"] { display: -ms-flexbox; display: flex; -ms-align-items: center; align-items: center; -ms-flex-pack: center; justify-content: center; }
+.trust-strip i { font-size: 18px; line-height: 1; display: inline-block; }
+.trust-strip span { line-height: 1; }

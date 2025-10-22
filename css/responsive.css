@@ -1,0 +1,103 @@
+/* --Additional Media Query-- */
+@media (min-width: 1200px){
+  .container{
+    max-width: 1170px;
+  }
+
+  .logo img {
+  width: 70% ;
+}
+}
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+.slider-content h2 {
+font-size: 45px;}
+
+.logo img {
+  width: 100% ;
+  margin-top: 11px;
+}
+
+}
+
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+.sm-100{width:100%}
+.social-icon a{margin-left:10px;}
+.main-menu ul li a { padding:40px 8px;}
+.service-box {
+  padding: 35px 20px;
+}
+.single-service{
+  padding:30px;
+  }
+.slider-content h2 {
+  font-size: 40px;
+  margin-bottom:10px;}
+.btn{margin-right:15px;}
+.subscribe-text h3 {font-size:20px}
+.tag-menu{margin-top:30px}
+.single-service h3, .service-box h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.logo img {
+    width: 140px;
+    margin-top: 4px;
+    max-width: 140px;
+}
+
+
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+.container {width:300px}
+ .social-icon {text-align:center !important}
+ .email-address{display:none}
+ .logo {
+  text-align: center;
+  margin: 20px 0;
+}
+.single-slider{padding:100px 0;}
+.owl-dot{display:none}
+.slider-content p{display:none}
+.slider-content h3{font-size:30px}
+.slider-content h2{font-size:40px;}
+.slider-content a{margin-bottom:15px}
+.contact-form button{margin-bottom:20px}
+.blog-post ul li .sidebar-post-img {
+  margin-bottom:12px;
+  margin-right:16px;
+}
+.blog-post ul li .post-text {
+  margin-left:0;
+}
+.sidebar-widget-2 .sidebar-form{
+  padding-top: 80px;
+}
+.section-heading h2 {font-size:20px}
+.btn-more{margin-bottom:20px}
+.testimonial-area{padding-top:130px;padding-bottom:80px}
+.testimonial-text p {
+  width: 100%;
+}
+.purchase-content > p {
+  width: 100%;
+}
+.single-service h3, .service-box h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+ 
+}
+ 
