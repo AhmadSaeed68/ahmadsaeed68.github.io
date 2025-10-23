@@ -57,7 +57,7 @@ font-size: 45px;}
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-.container {width:300px}
+.container {width:100%; max-width:100%; padding-left:16px; padding-right:16px}
  .social-icon {text-align:center !important}
  .email-address{display:none}
  .logo {
@@ -81,7 +81,20 @@ font-size: 45px;}
 .sidebar-widget-2 .sidebar-form{
   padding-top: 80px;
 }
-.section-heading h2 {font-size:20px}
+ .section-heading h2 {font-size:20px}
+ /* Make content left-aligned on small screens for readability */
+ .section-heading,
+ .feature-text,
+ .service-box,
+ .single-service,
+ .purchase-content,
+ .footer-widget,
+ .about-text,
+ .contact-wrapper,
+ .cta-area .text-center {
+   text-align: left !important;
+ }
+ .btn{margin-right:0}
 .btn-more{margin-bottom:20px}
 .testimonial-area{padding-top:130px;padding-bottom:80px}
 .testimonial-text p {
@@ -90,14 +103,33 @@ font-size: 45px;}
 .purchase-content > p {
   width: 100%;
 }
+ /* Trust strip becomes horizontal scroll on mobile */
+ .trust-strip .row {
+   display: flex;
+   flex-wrap: nowrap;
+   overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   scroll-snap-type: x mandatory;
+   scroll-behavior: smooth;
+   gap: 12px;
+   padding-bottom: 6px;
+ }
+ .trust-strip .row > div {
+   flex: 0 0 auto;
+   min-width: 70%;
+   scroll-snap-align: center;
+ }
+ .trust-strip .row::-webkit-scrollbar { display: none; }
+ .trust-strip .row { -ms-overflow-style: none; scrollbar-width: none; }
 .single-service h3, .service-box h3 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
+}
+
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-.container {width:450px}
- 
+  .container {padding-left:20px; padding-right:20px}
 }
  

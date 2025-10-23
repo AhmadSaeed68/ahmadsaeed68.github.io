@@ -134,6 +134,8 @@ button:focus, .btn:focus{
 .bg-olive-green{background: #44460f none repeat scroll 0 0;}
 .btn {
   -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
   background: #606C11;
   border: 1px solid #606C11;
   color: #fff;
@@ -475,6 +477,16 @@ border:3px solid #fff;
  transition: all 0.3s ease 0s;
 }
 .single-service:hover i, .single-service:hover h3, .single-service:hover p{color:#fff;transition:.3s}
+
+/* Service-box icon presentation */
+.service-box .service-icon { display:flex; align-items:center; justify-content:center; }
+.service-box .service-icon i { font-size:56px; line-height:1; margin-top:0; }
+.service-box .service-icon + h3 { margin-top:16px; }
+
+/* Icon color variants */
+.icon-dark-green i { color:#7e8b27; }
+.icon-black i { color:#222; }
+.icon-white i { color:#fff; }
 /*7. project-area */
 .Project-box{position:relative;}
 .Project-image a{
@@ -482,7 +494,7 @@ border:3px solid #fff;
  display:block;
  }
 .Project-image a:before{
-  background: #7e8b27none repeat scroll 0 0;
+  background: #7e8b27 none repeat scroll 0 0;
   position: absolute;
   content: "";
   opacity: 0;
