@@ -1342,4 +1342,24 @@ label {
 
 
 
+/* Toast / notification */
+.hr-toast-container { position: fixed; top: 16px; right: 16px; z-index: 1050; display: flex; flex-direction: column; gap: 10px; }
+@media (max-width: 767px) {
+  .hr-toast-container { left: 16px; right: 16px; }
+}
+.hr-toast { background: #333; color: #fff; border-radius: 6px; padding: 12px 14px; box-shadow: 0 8px 24px rgba(0,0,0,.18); display: flex; align-items: flex-start; gap: 10px; opacity: 0; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease; }
+.hr-toast.show { opacity: 1; transform: translateY(0); }
+.hr-toast.success { background: #7e8b27; }
+.hr-toast.error { background: #c0392b; }
+.hr-toast .hr-toast-icon { font-size: 18px; line-height: 1; margin-top: 2px; }
+.hr-toast .hr-toast-message { font-size: 14px; line-height: 1.4; }
+.hr-toast .hr-toast-close { margin-left: auto; background: transparent; border: none; color: rgba(255,255,255,.9); font-size: 18px; line-height: 1; cursor: pointer; padding: 0 4px; }
+
+/* Inline form message fallback styling */
+.form-messege.success { color: #2e7d32; margin-top: 8px; }
+.form-messege.error { color: #c62828; margin-top: 8px; }
+
+
+
+
 

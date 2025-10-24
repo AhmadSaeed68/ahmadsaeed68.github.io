@@ -76,6 +76,11 @@
 											<li><a href="services/guttering.html">Soffits, Fascias &amp; Guttering</a></li>
 										</ul>
 									</li>
+									<li><a href="locations/bury-st-edmunds/">LOCATIONS <i class="fa fa-angle-down"></i></a>
+										<ul>
+											<li><a href="locations/bury-st-edmunds/">Bury St Edmunds</a></li>
+										</ul>
+									</li>
 									<li><a href="contact.html">CONTACT</a></li>
 								</ul>
 							</nav>
@@ -96,6 +101,11 @@
 												<li><a href="services/new-roofs.html">New Roofs</a></li>
 												<li><a href="services/flat-roofing.html">Flat Roofing</a></li>
 												<li><a href="services/guttering.html">Soffits, Fascias &amp; Guttering</a></li>
+											</ul>
+										</li>
+										<li><a href="locations/bury-st-edmunds/">LOCATIONS <i class="fa fa-angle-down"></i></a>
+											<ul>
+												<li><a href="locations/bury-st-edmunds/">Bury St Edmunds</a></li>
 											</ul>
 										</li>
 										<li><a href="contact.html">CONTACT</a></li>
@@ -537,10 +547,12 @@ We know how important a strong, secure roof is to protect your property. That's 
 							<h3 class="widget-title">CONTACT</h3>
 							<p>Have a question or need a quick quote? Email <a href="mailto:office@hertsroofing.com">office@hertsroofing.com</a></p>
 							<div class="footer-form">
-								<form action="#">
-									<input type="text" placeholder="Type your E-mail address..." />
-									<textarea name="message" placeholder="Write here..."></textarea>
-									<button>Send</button>
+								<form action="contact.php" method="post">
+									<input type="hidden" name="form_source" value="footer">
+									<input type="email" name="footer_email" placeholder="Type your E-mail address..." required />
+									<textarea name="message" placeholder="Write here..." required></textarea>
+									<button type="submit">Send</button>
+									<div class="form-messege" id="footer-message" aria-live="polite"></div>
 								</form>
 							</div>
 						</div>

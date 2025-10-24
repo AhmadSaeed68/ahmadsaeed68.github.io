@@ -203,5 +203,59 @@ $('.team-active').owlCarousel({
                 }
             })();
 
+                    // Display flash message based on URL ?status using a toast; also set inline message as fallback
+                    (function() {
+                        function ensureToastContainer() {
+                            var c = document.querySelector('.hr-toast-container');
+                            if (!c) {
+                                c = document.createElement('div');
+                                c.className = 'hr-toast-container';
+                                document.body.appendChild(c);
+                            }
+                            return c;
+                        }
+
+                        function showToast(message, type) {
+                            var container = ensureToastContainer();
+                            var toast = document.createElement('div');
+                            toast.className = 'hr-toast ' + (type || 'success');
+                            toast.setAttribute('role', 'status');
+                            toast.setAttribute('aria-live', 'polite');
+                            toast.innerHTML = '<span class="hr-toast-icon"><i class="fa ' + (type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle') + '"></i></span>' +
+                                                                '<div class="hr-toast-message"></div>' +
+                                                                '<button class="hr-toast-close" aria-label="Close">&times;</button>';
+                            toast.querySelector('.hr-toast-message').textContent = message;
+                            container.appendChild(toast);
+                            // trigger animation
+                            requestAnimationFrame(function(){ toast.classList.add('show'); });
+
+                            var remove = function() {
+                                toast.classList.remove('show');
+                                setTimeout(function(){ if (toast.parentNode) toast.parentNode.removeChild(toast); }, 250);
+                            };
+                            var timer = setTimeout(remove, 5000);
+                            toast.querySelector('.hr-toast-close').addEventListener('click', function(){ clearTimeout(timer); remove(); });
+                        }
+
+                        try {
+                            var params = new URLSearchParams(window.location.search);
+                            var status = params.get('status');
+                            if (!status) return;
+                            var isSuccess = status === 'success';
+                            var msg = isSuccess ? 'Thanks, your message has been sent.' : 'Sorry, we could not send your message right now. Please try again later.';
+
+                            // Show toast
+                            showToast(msg, isSuccess ? 'success' : 'error');
+
+                            // Inline fallback near form if present
+                            var target = document.querySelector('.form-messege');
+                            if (target) {
+                                target.textContent = msg;
+                                target.classList.remove('error','success');
+                                target.classList.add(isSuccess ? 'success' : 'error');
+                            }
+                        } catch (e) {}
+                    })();
+
 
 })(jQuery);
